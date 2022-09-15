@@ -79,3 +79,17 @@ html, body {
 .text-placehoder {
     color: var(--font-color-2);
 }
+
+.form-control {
+    background-color:  var(--color-bg-2);
+    border-color:  var(--color-bg-2);
+    color: var(--font-color-1);
+}
+.form-control:hover, 
+.form-control:active,
+.form-control:focus,
+.form-control:disabled {
+    background-color:  var(--color-bg-2);
+    border-color:  var(--color-bg-2);
+    color: var(--font-color-1);
+}

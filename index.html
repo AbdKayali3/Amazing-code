@@ -8,6 +8,11 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="css/bootstrap.min.css" />
         <link rel="stylesheet" href="css/style.css">
+        
+        <!-- themes -->
+        <!-- <link rel="stylesheet" href="css/themes/all.css"> -->
+
+
     </head>
     <body>
         
@@ -20,7 +25,7 @@
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <textarea class="code-text-area" name="" id="" cols="30" rows="10" placeholder="Past your code here..."></textarea>
+                    <textarea class="code-text-area" name="" id="code_text_area" cols="30" rows="10" placeholder="Past your code here..."></textarea>
                 </div>
                 <div class="col-md-6">
                     <div class="code-container">
@@ -32,18 +37,98 @@
                                 <h5 class="text-placehoder text-center p-5"> <i class="fa-solid fa-wand-sparkles fa-2x"></i> <br><br> A wizzard will do some magic and show you a colorfull code in here</h5>
                             </div>
                             <div class="code_footer">
-                                
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <div class="row">
+                <div class="col-md-6 form group">
+                    <h4>Language</h4>
+                    <select name="language" id="language" class="dark text-light form-control">
+                        <option value="java" selected>java</option>
+                        <option value="python">python</option>
+                        <option value="c">c</option>
+                        <option value="php">php</option>
+                        <option value="javascript">javascript</option>
+                        <option value="html">html</option>
+                        <option value="css">css</option>
+                        <option value="csharp">csharp</option>
+                        <option value="sql">sql</option>
+                        <option value="go">go</option>
+                        <option value="haskell">haskell</option>
+                        <option value="coffeescript">coffeescript</option>
+                        <option value="d">d</option>
+                        <option value="generic">generic</option>
+                        <option value="json">json</option>
+                        <option value="lua">lua</option>
+                        <option value="r">r</option>
+                        <option value="ruby">ruby</option>
+                        <option value="scheme">scheme</option>
+                        <option value="shell">shell</option>
+                        <option value="smalltalk">smalltalk</option>
+                    </select>
+                </div>
+                <div class="col-md-6 form group">
+                    <h4>theme</h4>
+                    <select name="theme" id="theme" class="dark text-light form-control">
+                        <option value="all-hallows-eve">all-hallows-eve</option>
+                        <option value="blackboard">blackboard</option>
+                        <option value="dreamweaver">dreamweaver</option>
+                        <option value="espresso-libre">espresso-libre</option>
+                        <option value="github">github</option>
+                        <option value="kimbie-dark">kimbie-dark</option>
+                        <option value="kimbie-light">kimbie-light</option>
+                        <option value="monokai">monokai</option>
+                        <option value="obsidian">obsidian</option>
+                        <option value="paraiso-dark">paraiso-dark</option>
+                        <option value="paraiso-light">paraiso-light</option>
+                        <option value="pastie">pastie</option>
+                    </select>
+                </div>
+            </div>
+
 
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="js/bootstrap.min.js"></script>
+
+
+        <script src="js/rainbow.min.js"></script>
+
+        <!-- Languages -->
+        <script src="js/language/c.js"></script>
+        <script src="js/language/coffeescript.js"></script>
+        <script src="js/language/csharp.js"></script>
+        <script src="js/language/css.js"></script>
+        <script src="js/language/d.js"></script>
+        <script src="js/language/generic.js"></script>
+        <script src="js/language/go.js"></script>
+        <script src="js/language/haskell.js"></script>
+        <script src="js/language/html.js"></script>
+        <script src="js/language/java.js"></script>
+        <script src="js/language/javascript.js"></script>
+        <script src="js/language/json.js"></script>
+        <script src="js/language/lua.js"></script>
+        <script src="js/language/php.js"></script>
+        <script src="js/language/python.js"></script>
+        <script src="js/language/r.js"></script>
+        <script src="js/language/ruby.js"></script>
+        <script src="js/language/scheme.js"></script>
+        <script src="js/language/shell.js"></script>
+        <script src="js/language/smalltalk.js"></script>
+        <script src="js/language/sql.js"></script>
+
         <script src="js/script.js"></script>
 
     </body>
 </html>
+
+
+<pre><code data-language="python">
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+</code></pre>
