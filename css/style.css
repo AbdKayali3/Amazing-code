@@ -1,0 +1,81 @@
+:root {
+    --color-bg-1: #1A1A1B;
+    --color-bg-2: #333F44;
+    --color-main-1: #37AA9C;
+    --color-main-2: #94F3E4;
+    --font-color-1: #eee;
+    --font-color-2: #aaa;
+    --shadow-color-1: #37AA9C;
+    --shadow-color-2: #aaaaaa55;
+}
+* {
+    color: var(--font-color-1);
+}
+html, body {
+    background-color: var(--color-bg-1);
+}
+
+/*
+ *  scrolbar
+ */
+
+*::-webkit-scrollbar-track
+ {
+     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+     box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+     background-color: #F5F5F5;
+ }
+ 
+*::-webkit-scrollbar
+ {
+     width: 10px;
+     background-color: #F5F5F5;
+ }
+ 
+*::-webkit-scrollbar-thumb
+ {
+     background-color: #000000;
+     border: 2px solid #555555;
+ }
+
+
+.header {
+    padding: 50px;
+    margin-top: 20px;
+    /* background-color: var(--color-bg-2); */
+    border-radius: 15px;
+}
+.header h1 {
+    font-size: 3rem;
+    color: var(--color-main-1);
+}
+.header p {
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.code-text-area {
+    background-color: var(--color-bg-2);
+    max-height: 500px;
+    height: 500px;
+    width: 100%;
+    overflow: auto;
+}
+/* .code-text-area:focus {
+    box-shadow:  5px 5px var(--shadow-color-1);
+} */
+.code-text-area:focus-visible {
+    outline: -webkit-focus-ring-color auto 1px;
+    outline-color: var(--shadow-color-1);
+}
+.code-container {
+    background-color: var(--color-bg-2);
+    max-height: 500px;
+    height: 500px;
+    width: 100%;
+    max-width: 100%;
+    overflow: auto;
+}
+.text-placehoder {
+    color: var(--font-color-2);
+}
