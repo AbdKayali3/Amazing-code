@@ -52,21 +52,35 @@ $(document).ready(function() {
         let highlighted = '';
         highlighted += '';
         // highlighted += '<link rel="stylesheet" href="'+cssLink+theme+'.css">';
-        highlighted += '<pre>';
-        highlighted += '<div class="in-pre-header" style="height:15px;border-radius:10px 10px 0 0;font-size:10px;text-align:center;">';
+
+        highlighted += '<div class="in-pre-header" style="height:15px;border-radius:10px 10px 0 0;font-size:10px;text-align:center;display:block;z-index:5;position:relative">';
         highlighted += 'Script.js';
         highlighted += '<span class="circle-1" style="position:absolute;top:5px;left:10px;width:5px;height:5px;background:red;border-radius:50%;"></span>';
         highlighted += '<span class="circle-2" style="position:absolute;top:5px;left:20px;width:5px;height:5px;background:orange;border-radius:50%;"></span>';
         highlighted += '<span class="circle-3" style="position:absolute;top:5px;left:30px;width:5px;height:5px;background:gray;border-radius:50%;"></span>';
         highlighted += '</div>';
+
+
+        highlighted += '<pre>';
+        // highlighted += '<span class="in-pre-header" style="height:15px;border-radius:10px 10px 0 0;font-size:10px;text-align:center;display:block;">';
+        // highlighted += 'Script.js';
+        // highlighted += '<span class="circle-1" style="position:absolute;top:5px;left:10px;width:5px;height:5px;background:red;border-radius:50%;"></span>';
+        // highlighted += '<span class="circle-2" style="position:absolute;top:5px;left:20px;width:5px;height:5px;background:orange;border-radius:50%;"></span>';
+        // highlighted += '<span class="circle-3" style="position:absolute;top:5px;left:30px;width:5px;height:5px;background:gray;border-radius:50%;"></span>';
+        // highlighted += '</span>';
         highlighted += '<code data-language="'+lang+'">';
         highlighted += originalCode;
         highlighted += '</code>';
-        highlighted += '<div class="in-pre-header in-pre-footer" style="height:15px;border-radius:0 0 10px 10px">';
+        // highlighted += '<span class="in-pre-header in-pre-footer" style="height:15px;border-radius:0 0 10px 10px;display:block;">';
+        // highlighted += '<span class="language-footer" style="position:absolute;bottom:0;left:10px;font-size:9px;">JavaScript</span>';
+        // highlighted += '<span class="language-footer" style="position:absolute;bottom:0;right:10px;font-size:9px;"><a href="https://abdkayali3.github.io/Amazing-code/">©info</a></span>';
+        // highlighted += '</span>';
+        highlighted += '</pre>';
+
+        highlighted += '<div class="in-pre-header in-pre-footer" style="height:15px;border-radius:0 0 10px 10px;display:block;z-index:5;position:relative">';
         highlighted += '<span class="language-footer" style="position:absolute;bottom:0;left:10px;font-size:9px;">JavaScript</span>';
         highlighted += '<span class="language-footer" style="position:absolute;bottom:0;right:10px;font-size:9px;"><a href="https://abdkayali3.github.io/Amazing-code/">©info</a></span>';
         highlighted += '</div>';
-        highlighted += '</pre>';
 
         $("#code_area").html("");
         $("#code_area").append(highlighted);
@@ -85,6 +99,9 @@ $(document).ready(function() {
     function CopyHTML() {
         let htmlCode = $("#code_area").html();
         let HiddenInput = $("#hiddenToCopy");
+        htmlCode = ReplaceNow(htmlCode, "<code", "<span");
+        htmlCode = ReplaceNow(htmlCode, "</code>", "</span>");
+        htmlCode = ReplaceNow(htmlCode, '<div class="preloader"><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>', "");
         HiddenInput.val(htmlCode);
         // HiddenInput.select();
 
@@ -113,22 +130,31 @@ $(document).ready(function() {
         {
             theme:"all-hallows-eve",
             data: [
+                {name: "pre",value: {'z-index':"0",}},
                 {name: "pre",value: {'border-radius':"10px",}},
                 {name: "pre",value: {'display':"inline-block",}},
                 {name: "pre",value: {'width':"auto",}},
-                {name: "pre",value: {'position':"relative",}},
+                // {name: "pre",value: {'position':"relative",}},
                 {name: "pre",value: {'max-width':"1200px",}},
                 {name: "pre",value: {'min-width':"600px",}},
                 // {name: "pre",value: {'color':"#fff",}},
-                {name: "pre",value: {'margin':"0px",}},
+                // {name: "pre",value: {'margin':"0",}},
                 {name: "pre",value: {'padding':"0",}},
-                {name: "pre",value: {'padding-top':"0",}},
+                {name: "pre",value: {'padding-top':"20px",}},
+                {name: "pre",value: {'padding-bottom':"20px",}},
                 {name: "pre",value: {'word-wrap':"break-word",}},
                 {name: "pre",value: {'font-size':"14px",}},
-                {name: "pre",value: {'margin-bottom':"20px",}},
+                {name: "pre",value: {'margin-top':"-20px",}},
+                {name: "pre",value: {'margin-bottom':"-20px",}},
                 {name: "pre",value: {'background':"#0b1022",}},
                 {name: "pre",value: {'color':"#fff",}},
+
+
+
+                {name: ".in-pre-header",value: {'max-width':"1200px",}},
+                {name: ".in-pre-header",value: {'width':"600px",}},
                 {name: ".in-pre-header",value: {'background':"#1c1c43",}},
+
                 {name: "pre .comment",value: {'color':"#727272",}},
                 {name: "pre .constant",value: {'color':"#d8fa3c",}},
                 {name: "pre .storage",value: {'color':"#fbde2d",}},
@@ -176,6 +202,16 @@ $(document).ready(function() {
         // $(t).find(".keyword").css({'color':'red'});
         console.log("Inline Coloring Done");
         
+    }
+
+
+    //to find and replace things in a string. we will use it to replace html tags when needed
+    function ReplaceNow(str ,replacedFrom, replacedWith) {
+        let replaced = "";
+
+        replaced = str.replace(replacedFrom, replacedWith)
+
+        return replaced;
     }
 
 
