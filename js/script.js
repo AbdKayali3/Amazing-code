@@ -11,6 +11,8 @@ $(document).ready(function() {
     $("#code_text_area").on("input", function() {Init()});
     $("#language").on("change", function() {Init()});
     $("#theme").on("change", function() {Init()});
+    $("#isHeader").on("change", function() {Init()});
+    $("#scriptName").on("change", function() {Init()});
 
     // to initialize the prcessess of styling the code when any change happen to any of the inputs
     function Init() {
@@ -20,10 +22,11 @@ $(document).ready(function() {
         // get what the user choose from the language, theme, header, script name, and line numbers
         let lang = $("#language").val();
         let theme = $("#theme").val();
-        let isHeader = true;
+        let isHeader = parseInt($("#isHeader").val());
+        let scriptName = $("#scriptName").val();
 
         if(originalCode != "") {
-            ColorCode(originalCode, lang, theme, isHeader);
+            ColorCode(originalCode, lang, theme, isHeader, scriptName);
             isChange = true;
         } else {
             EmptyCode();

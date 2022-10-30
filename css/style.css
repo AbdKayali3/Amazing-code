@@ -68,6 +68,9 @@ html, body {
     outline: -webkit-focus-ring-color auto 1px;
     outline-color: var(--shadow-color-1);
 }
+.container-box {
+    position: relative;
+}
 .code-container {
     background-color: var(--color-bg-2);
     max-height: 500px;
@@ -75,17 +78,21 @@ html, body {
     width: 100%;
     max-width: 100%;
     overflow: auto;
-    position: relative;
 }
 .code-btn-holder {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: 24px;
+    right: 18px;
+}
+.copy-btn {
+    background-color: #37AA9C;
 }
 .text-placehoder {
     color: var(--font-color-2);
 }
-
+.form-group {
+    margin-top: 1rem;
+}
 .form-control {
     background-color:  var(--color-bg-2);
     border-color:  var(--color-bg-2);

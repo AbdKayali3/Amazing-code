@@ -28,28 +28,30 @@
                     <textarea class="code-text-area" name="" id="code_text_area" cols="30" rows="10" placeholder="Past your code here..."></textarea>
                 </div>
                 <div class="col-md-6">
-                    <div class="code-container">
-                        <div id="code_area">
-                            <div class="code_header"></div>
-                            <div id="code_body" class="code_body">
-                                <br>
-                                <br>
-                                <h5 class="text-placehoder text-center p-5"> <i class="fa-solid fa-wand-sparkles fa-2x"></i> <br><br> A wizzard will do some magic and show you a colorfull code in here</h5>
+                    <div class="container-box">
+                        <div class="code-container">
+                            <div id="code_area">
+                                <div class="code_header"></div>
+                                <div id="code_body" class="code_body">
+                                    <br>
+                                    <br>
+                                    <h5 class="text-placehoder text-center p-5"> <i class="fa-solid fa-wand-sparkles fa-2x"></i> <br><br> A wizzard will do some magic and show you a colorfull code in here</h5>
+                                </div>
+                                <div class="code_footer">
+                                </div>
                             </div>
-                            <div class="code_footer">
+                            <div class="code-btn-holder">
+                                <button class="btn btn-success copy-btn mx-2" id="copyHtml">Copy HTML</button>
+                                <button class="btn btn-success copy-btn mx-2" id="copyRichText">Copy RichText</button>
                             </div>
+                            <textarea id="hiddenToCopy" readonly style="opacity: 0;position: absolute;right: 0;bottom: 0;z-index: -15;"></textarea>
                         </div>
-                        <div class="code-btn-holder">
-                            <button class="btn btn-success copy-btn mx-2" id="copyHtml">Copy HTML</button>
-                            <button class="btn btn-success copy-btn mx-2" id="copyRichText">Copy RichText</button>
-                        </div>
-                        <textarea id="hiddenToCopy" readonly style="opacity: 0;position: absolute;right: 0;bottom: 0;z-index: -15;"></textarea>
                     </div>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-md-6 form group">
+                <div class="col-md-6 form-group">
                     <h4>Language</h4>
                     <select name="language" id="language" class="dark text-light form-control">
                         <option value="java" selected>java</option>
@@ -75,8 +77,8 @@
                         <option value="smalltalk">smalltalk</option>
                     </select>
                 </div>
-                <div class="col-md-6 form group">
-                    <h4>theme</h4>
+                <div class="col-md-6 form-group">
+                    <h4>Theme</h4>
                     <select name="theme" id="theme" class="dark text-light form-control">
                         <option value="all-hallows-eve">all-hallows-eve</option>
                         <option value="blackboard">blackboard</option>
@@ -91,6 +93,17 @@
                         <option value="paraiso-light">paraiso-light</option>
                         <option value="pastie">pastie</option>
                     </select>
+                </div>
+                <div class="col-md-6 form-group">
+                    <h4>Header-Footer</h4>
+                    <select name="isHeader" id="isHeader" class="dark text-light form-control">
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <div class="col-md-6 form-group">
+                    <h4>Name/Title</h4>
+                    <input type="text" name="scriptName" id="scriptName" class="dark text-light form-control">
                 </div>
             </div>
 
@@ -131,10 +144,3 @@
 
     </body>
 </html>
-
-
-<pre><code data-language="python">
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
-</code></pre>
