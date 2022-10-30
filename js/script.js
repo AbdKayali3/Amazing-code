@@ -5,6 +5,7 @@ $(document).ready(function() {
     const cssLink = URl+'css/themes/';
 
     let isChange = false;
+    let scriptName = "Script.js";
 
     // events to listen to any cahnge that might happen
     $("#code_text_area").on("input", function() {Init()});
@@ -14,15 +15,15 @@ $(document).ready(function() {
     // to initialize the prcessess of styling the code when any change happen to any of the inputs
     function Init() {
         let originalCode = $("#code_text_area").val();
-        console.log(originalCode);
+        // console.log(originalCode);
 
+        // get what the user choose from the language, theme, header, script name, and line numbers
         let lang = $("#language").val();
-
         let theme = $("#theme").val();
+        let isHeader = true;
 
         if(originalCode != "") {
-            ColorCode(originalCode, lang, theme);
-            // InlineColors();
+            ColorCode(originalCode, lang, theme, isHeader);
             isChange = true;
         } else {
             EmptyCode();
@@ -46,45 +47,44 @@ $(document).ready(function() {
     }
 
     // to color the code and add it into the code area after styling
-    function ColorCode(originalCode,lang = "java", theme = "all-hallows-eve") {
+    function ColorCode(originalCode,lang = "java", theme = "all-hallows-eve", isHeader = false, scriptName = "") {
         console.log(lang);
 
         let highlighted = '';
-        highlighted += '';
-        // highlighted += '<link rel="stylesheet" href="'+cssLink+theme+'.css">';
-
-        highlighted += '<div class="in-pre-header" style="height:15px;border-radius:10px 10px 0 0;font-size:10px;text-align:center;display:block;z-index:5;position:relative">';
-        highlighted += 'Script.js';
-        highlighted += '<span class="circle-1" style="position:absolute;top:5px;left:10px;width:5px;height:5px;background:red;border-radius:50%;"></span>';
-        highlighted += '<span class="circle-2" style="position:absolute;top:5px;left:20px;width:5px;height:5px;background:orange;border-radius:50%;"></span>';
-        highlighted += '<span class="circle-3" style="position:absolute;top:5px;left:30px;width:5px;height:5px;background:gray;border-radius:50%;"></span>';
-        highlighted += '</div>';
-
 
         highlighted += '<pre>';
-        // highlighted += '<span class="in-pre-header" style="height:15px;border-radius:10px 10px 0 0;font-size:10px;text-align:center;display:block;">';
-        // highlighted += 'Script.js';
-        // highlighted += '<span class="circle-1" style="position:absolute;top:5px;left:10px;width:5px;height:5px;background:red;border-radius:50%;"></span>';
-        // highlighted += '<span class="circle-2" style="position:absolute;top:5px;left:20px;width:5px;height:5px;background:orange;border-radius:50%;"></span>';
-        // highlighted += '<span class="circle-3" style="position:absolute;top:5px;left:30px;width:5px;height:5px;background:gray;border-radius:50%;"></span>';
-        // highlighted += '</span>';
+
+        // if the user choose to have a header and a footer
+        if(isHeader) {
+            highlighted += '<span class="in-pre-additions pre-header">';
+            highlighted += scriptName;
+            highlighted += '<span class="circle-1"></span>';
+            highlighted += '<span class="circle-2"></span>';
+            highlighted += '<span class="circle-3"></span>';
+            highlighted += '</span>';
+        }
         highlighted += '<code data-language="'+lang+'">';
         highlighted += originalCode;
         highlighted += '</code>';
-        // highlighted += '<span class="in-pre-header in-pre-footer" style="height:15px;border-radius:0 0 10px 10px;display:block;">';
-        // highlighted += '<span class="language-footer" style="position:absolute;bottom:0;left:10px;font-size:9px;">JavaScript</span>';
-        // highlighted += '<span class="language-footer" style="position:absolute;bottom:0;right:10px;font-size:9px;"><a href="https://abdkayali3.github.io/Amazing-code/">©info</a></span>';
-        // highlighted += '</span>';
+
+        // if the user choose to have a header and a footer
+        if(isHeader) {
+            highlighted += '<span class="in-pre-additions pre-footer">';
+            highlighted += '<span class="language-footer" >JavaScript</span>';
+            highlighted += '<span class="language-footer info-footer"><a href="https://abdkayali3.github.io/Amazing-code/">©info</a></span>';
+            highlighted += '</span>';
+        }
         highlighted += '</pre>';
 
-        highlighted += '<div class="in-pre-header in-pre-footer" style="height:15px;border-radius:0 0 10px 10px;display:block;z-index:5;position:relative">';
-        highlighted += '<span class="language-footer" style="position:absolute;bottom:0;left:10px;font-size:9px;">JavaScript</span>';
-        highlighted += '<span class="language-footer" style="position:absolute;bottom:0;right:10px;font-size:9px;"><a href="https://abdkayali3.github.io/Amazing-code/">©info</a></span>';
-        highlighted += '</div>';
 
+        // appending the <pre> (code section) 
         $("#code_area").html("");
         $("#code_area").append(highlighted);
+
+        // style it
         Rainbow.color();
+
+        // a work around to trigger an event that will appened your theme inline styles to the appended <pre>
         $("#code_text_area").blur();
         $("#code_text_area").focus();
         
@@ -99,18 +99,20 @@ $(document).ready(function() {
     function CopyHTML() {
         let htmlCode = $("#code_area").html();
         let HiddenInput = $("#hiddenToCopy");
+
+        // replace <code> with <span> becasue some texteditors don't like it for securityt reasons
         htmlCode = ReplaceNow(htmlCode, "<code", "<span");
         htmlCode = ReplaceNow(htmlCode, "</code>", "</span>");
+
+        //  remove some divs that are there to rtepresent the loading bar wgile the code get styled (from the original library and we don't need it or use it here)
         htmlCode = ReplaceNow(htmlCode, '<div class="preloader"><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>', "");
+
+        // appened the html code to a hidden input so we can copy it like we copy any normal text to the clipboard
         HiddenInput.val(htmlCode);
         // HiddenInput.select();
-
         var textBox = document.getElementById("hiddenToCopy");
         textBox.select();
         document.execCommand("copy");
-
-        // document.execCommand("Copy");
-
         console.log("coppied");
     }
 
@@ -126,59 +128,10 @@ $(document).ready(function() {
 
 
 
-    const themes = [
-        {
-            theme:"all-hallows-eve",
-            data: [
-                {name: "pre",value: {'z-index':"0",}},
-                {name: "pre",value: {'border-radius':"10px",}},
-                {name: "pre",value: {'display':"inline-block",}},
-                {name: "pre",value: {'width':"auto",}},
-                // {name: "pre",value: {'position':"relative",}},
-                {name: "pre",value: {'max-width':"1200px",}},
-                {name: "pre",value: {'min-width':"600px",}},
-                // {name: "pre",value: {'color':"#fff",}},
-                // {name: "pre",value: {'margin':"0",}},
-                {name: "pre",value: {'padding':"0",}},
-                {name: "pre",value: {'padding-top':"20px",}},
-                {name: "pre",value: {'padding-bottom':"20px",}},
-                {name: "pre",value: {'word-wrap':"break-word",}},
-                {name: "pre",value: {'font-size':"14px",}},
-                {name: "pre",value: {'margin-top':"-20px",}},
-                {name: "pre",value: {'margin-bottom':"-20px",}},
-                {name: "pre",value: {'background':"#0b1022",}},
-                {name: "pre",value: {'color':"#fff",}},
+    
 
 
-
-                {name: ".in-pre-header",value: {'max-width':"1200px",}},
-                {name: ".in-pre-header",value: {'width':"600px",}},
-                {name: ".in-pre-header",value: {'background':"#1c1c43",}},
-
-                {name: "pre .comment",value: {'color':"#727272",}},
-                {name: "pre .constant",value: {'color':"#d8fa3c",}},
-                {name: "pre .storage",value: {'color':"#fbde2d",}},
-                {name: "pre .string, pre .comment.docstring",value: {'color':"#61ce3c",}},
-                {name: "pre .string.regexp, pre .support.tag.script, pre .support.tag.style",value: {'color':"#fff",}},
-                {name: "pre .keyword, pre .selector",value: {'color':"#fbde2d",}},
-                {name: "pre .entity",value: {'color':"#ff6400",}},
-                {name: "pre .support",value: {'color':"#8da6ce",}},
-                {name: "pre .variable.global, pre .variable.class, pre .variable.instance",value: {'color':"#ff6400",}},
-                {name: "[data-language='c'] .function.call, .lang-c .function.call, .language-c .function.call",value: {'color':"#8da6ce",}},
-            ]
-        },
-        {
-            theme:"ss23",
-            data: [
-                {name: "sdsd",value: "sadasd"},
-                {name: "sdsd",value: "sadasd"},
-                {name: "sdsd",value: "sadasd"},
-            ]
-        }
-    ];
-
-
-
+    // ** a depricated way to inline style the code
     // function InlineColors() {
     //     themes[0].data.forEach(element => {
     //         $(element.name).css(element.value);
