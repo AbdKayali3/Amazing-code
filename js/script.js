@@ -181,12 +181,12 @@ $(document).ready(function() {
 
 
 // to do list
-// 1- make the name dynamic with input and the default string is Code
+// 1- make the name dynamic with input and the default string is Code --- done ---
 // 2- make the info link wihtout blue shit
 // 3- add line numbers
-// 4- more testing to fix the issues that are assuciated with moodel posting
+// 4- more testing to fix the issues that are assuciated with moodel posting --- done ---
 // 5- add the Copy RichText functionalaty
-// 6- seperate themes.js file
-// 7- add instruction in the same page for moodle and docs
-// 8- write in README.md the what is this, where we did tested it, how to use it, and finally what we did use
+// 6- seperate themes.js file --- done ---
+// 7- add instruction in the same page for moodle and docs --- done ---
+// 8- write in README.md the what is this, where we did tested it, how to use it, and finally what we did use --- done ---
 // 9- (possible) make adding the theme as as easy as adding a JSON somewhere and the code will take it and build it as a theme
