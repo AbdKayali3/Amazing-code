@@ -6,6 +6,7 @@ $(document).ready(function() {
 
     let isChange = false;
     let scriptName = "Script.js";
+    let theme = 0;
 
     // events to listen to any cahnge that might happen
     $("#code_text_area").on("input", function() {Init()});
@@ -21,9 +22,9 @@ $(document).ready(function() {
 
         // get what the user choose from the language, theme, header, script name, and line numbers
         let lang = $("#language").val();
-        let theme = $("#theme").val();
+        theme = parseInt($("#theme").val());
         let isHeader = parseInt($("#isHeader").val());
-        let scriptName = $("#scriptName").val();
+        scriptName = $("#scriptName").val();
 
         if(originalCode != "") {
             ColorCode(originalCode, lang, theme, isHeader, scriptName);
@@ -52,6 +53,7 @@ $(document).ready(function() {
     // to color the code and add it into the code area after styling
     function ColorCode(originalCode,lang = "java", theme = "all-hallows-eve", isHeader = false, scriptName = "") {
         console.log(lang);
+        console.log(theme);
 
         let highlighted = '';
 
@@ -61,9 +63,9 @@ $(document).ready(function() {
         if(isHeader) {
             highlighted += '<span class="in-pre-additions pre-header">';
             highlighted += scriptName;
-            highlighted += '<span class="circle-1"></span>';
-            highlighted += '<span class="circle-2"></span>';
-            highlighted += '<span class="circle-3"></span>';
+            highlighted += '<span class="circles circle-1"></span>';
+            highlighted += '<span class="circles circle-2"></span>';
+            highlighted += '<span class="circles circle-3"></span>';
             highlighted += '</span>';
         }
         highlighted += '<code data-language="'+lang+'">';
@@ -151,7 +153,7 @@ $(document).ready(function() {
 
     //to change the colors by adding inline styles
     function changeInlineColors(t) {
-        themes[0].data.forEach(element => {
+        themes[theme].data.forEach(element => {
             // $(element.name).css(element.value);
             $(t).find(element.name).css(element.value);
         });
