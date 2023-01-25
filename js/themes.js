@@ -104,7 +104,7 @@ const themes = [
             {name: "pre",value: {'overflow':"visible",'z-index':"0",'border-radius':"10px",'display':"inline-block",'width':"auto",'position':"relative",'max-width':"1200px",'min-width':"600px",'padding':"0",'padding-top':"20px",'padding-bottom':"20px",'word-wrap':"break-word",'font-size':"14px",'background':"#ffffff",'color':"#000000",}},
 
             // header and footer to style them in one div
-            {name: ".in-pre-additions",value: {'background':"#0b1022",'height':"15px",'display':"block",'position':"relative",'font-size':"10px",}},
+            {name: ".in-pre-additions",value: {'background':"#000000",'height':"15px",'display':"block",'position':"relative",'font-size':"10px",}},
 
             // header section
             {name: ".pre-header",value: {'border-radius':"10px 10px 0 0",'text-align':"center",'margin-top':"-20px",}},
