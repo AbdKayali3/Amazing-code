@@ -75,7 +75,7 @@ $(document).ready(function() {
         // if the user choose to have a header and a footer
         if(isHeader) {
             highlighted += '<span class="in-pre-additions pre-footer">';
-            highlighted += '<span class="language-footer" >JavaScript</span>';
+            highlighted += '<span class="language-footer" >'+lang+'</span>';
             highlighted += '<span class="language-footer info-footer"><a href="https://abdkayali3.github.io/Amazing-code/">©info</a></span>';
             highlighted += '</span>';
         }
