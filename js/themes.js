@@ -354,4 +354,133 @@ const themes = [
             {name: "[data-language='c'] .function.call, .lang-c .function.call, .language-c .function.call",value: {'color':"#a6e22e",}}, //
         ]
     },
+    {
+        theme:"obsidian",
+        index:8,
+        data: [
+
+            // the pre itself (the main thing that will hold your snippit code) aka "The Big Boss"
+            {name: "pre",value: {'overflow':"visible",'z-index':"0",'border-radius':"10px",'display':"inline-block",'width':"auto",'position':"relative",'max-width':"1200px",'min-width':"600px",'padding':"0",'padding-top':"20px",'padding-bottom':"20px",'word-wrap':"break-word",'font-size':"14px",'background':"#22282a",'color':"#f1f2f3",}},
+
+            // header and footer to style them in one div   
+            {name: ".in-pre-additions",value: {'background':"#37454D",'height':"15px",'display':"block",'position':"relative",'font-size':"10px"}},
+
+            // header section
+            {name: ".pre-header",value: {'border-radius':"10px 10px 0 0",'text-align':"center",'margin-top':"-20px"}},
+            {name: ".pre-header .circles",value: {'position':"absolute",'top':"5px",'width':"5px",'height':"5px",'border-radius':"50%",}},
+            {name: ".pre-header .circle-1",value: {'left':"10px",'background':"red",}},
+            {name: ".pre-header .circle-2",value: {'left':"20px",'background':"orange",}},
+            {name: ".pre-header .circle-3",value: {'left':"30px",'background':"gray",}},
+
+            // footer section
+            {name: ".pre-footer",value: {'border-radius':"0 0 10px 10px",'margin-bottom':"-20px",}},
+            {name: ".pre-footer .language-footer",value: {'position':"absolute",'bottom':"0",'left':"10px",'font-size':"9px"}},
+            {name: ".pre-footer .info-footer",value: {'left':"unset",'right':"10px",}},
+
+            // code section
+            {name: "pre .comment",value: {'color':"#66747b",}}, //
+            {name: "pre .constant",value: {'color':"#ec7600",}}, //
+            {name: "pre .storage",value: {'color':"#ec7600",}}, //
+            {name: "pre .string, pre .comment.docstring",value: {'color':"#ec7600",}}, //
+            {name: "pre .string.regexp, pre .support.tag.script, pre .support.tag.style",value: {'color':"#ffffff",}}, //
+            {name: "pre .keyword, pre .selector",value: {'color':"#93c763",}}, //
+            {name: "pre .entity.function",value: {'color':"#93c763",}}, //
+            {name: "pre .entity.name.function",value: {'color':"#93c763",}}, //
+            {name: "pre .entity.class",value: {'color':"#66d9ef",}}, //
+            // {name: "pre .entity",value: {'color':"#6d79de",}},
+            {name: "pre .operator",value: {'color':"#ffcd22",}}, //
+            {name: "pre .integer",value: {'color':"#ffcd22",}}, //
+            {name: "pre .variable.global, pre .variable.class, pre .variable.instance",value: {'color':"#cccccc",}}, //
+
+            {name: "pre .support",value: {'color':"#66d9ef",}},
+            {name: "pre .inherited-class",value: {'font-style':"italic",}},
+            {name: "[data-language='c'] .function.call, .lang-c .function.call, .language-c .function.call",value: {'color':"#facd22",}}, //
+        ]
+    },
+    {
+        theme:"paraiso-dark",
+        index:9,
+        data: [
+
+            // the pre itself (the main thing that will hold your snippit code) aka "The Big Boss"
+            {name: "pre",value: {'overflow':"visible",'z-index':"0",'border-radius':"10px",'display':"inline-block",'width':"auto",'position':"relative",'max-width':"1200px",'min-width':"600px",'padding':"0",'padding-top':"20px",'padding-bottom':"20px",'word-wrap':"break-word",'font-size':"14px",'background':"#261C26",'color':"#e7e9db",}},
+
+            // header and footer to style them in one div   
+            {name: ".in-pre-additions",value: {'background':"#3D163B",'height':"15px",'display':"block",'position':"relative",'font-size':"10px"}},
+
+            // header section
+            {name: ".pre-header",value: {'border-radius':"10px 10px 0 0",'text-align':"center",'margin-top':"-20px"}},
+            {name: ".pre-header .circles",value: {'position':"absolute",'top':"5px",'width':"5px",'height':"5px",'border-radius':"50%",}},
+            {name: ".pre-header .circle-1",value: {'left':"10px",'background':"red",}},
+            {name: ".pre-header .circle-2",value: {'left':"20px",'background':"orange",}},
+            {name: ".pre-header .circle-3",value: {'left':"30px",'background':"gray",}},
+
+            // footer section
+            {name: ".pre-footer",value: {'border-radius':"0 0 10px 10px",'margin-bottom':"-20px",}},
+            {name: ".pre-footer .language-footer",value: {'position':"absolute",'bottom':"0",'left':"10px",'font-size':"9px"}},
+            {name: ".pre-footer .info-footer",value: {'left':"unset",'right':"10px",}},
+
+            // code section
+            {name: "pre .comment",value: {'color':"#776e71",}}, //
+            {name: "pre .constant",value: {'color':"#48b685",}}, //
+            {name: "pre .storage",value: {'color':"#815ba4",}}, //
+            {name: "pre .string, pre .comment.docstring",value: {'color':"#48b685",}}, //
+            {name: "pre .string.regexp, pre .support.tag.script, pre .support.tag.style",value: {'color':"#f99b15",}}, //
+            {name: "pre .keyword, pre .selector",value: {'color':"#815ba4",}}, //
+            {name: "pre .entity.function",value: {'color':"#06b6ef",}}, //
+            {name: "pre .entity.name.function",value: {'color':"#06b6ef",}}, //
+            {name: "pre .entity.class",value: {'color':"#fec418",}}, //
+            // {name: "pre .entity",value: {'color':"#6d79de",}},
+            {name: "pre .operator",value: {'color':"#815ba4",}}, //
+            {name: "pre .integer",value: {'color':"#815ba4",}}, //
+            {name: "pre .variable.global, pre .variable.class, pre .variable.instance",value: {'color':"#ef6155",}}, //
+
+            {name: "pre .support",value: {'color':"#fec418",}}, //
+            {name: "pre .inherited-class",value: {'font-style':"italic",}},
+            {name: "[data-language='c'] .function.call, .lang-c .function.call, .language-c .function.call",value: {'color':"#06b6ef",}}, //
+        ]
+    },
+    {
+        theme:"paraiso-light",
+        index:10,
+        data: [
+
+            // the pre itself (the main thing that will hold your snippit code) aka "The Big Boss"
+            {name: "pre",value: {'overflow':"visible",'z-index':"0",'border-radius':"10px",'display':"inline-block",'width':"auto",'position':"relative",'max-width':"1200px",'min-width':"600px",'padding':"0",'padding-top':"20px",'padding-bottom':"20px",'word-wrap':"break-word",'font-size':"14px",'background':"#e7e9db",'color':"#2f1e2e",}},
+
+            // header and footer to style them in one div   
+            {name: ".in-pre-additions",value: {'background':"#2f1e2e",'height':"15px",'display':"block",'position':"relative",'font-size':"10px"}},
+
+            // header section
+            {name: ".pre-header",value: {'border-radius':"10px 10px 0 0",'text-align':"center",'margin-top':"-20px"}},
+            {name: ".pre-header .circles",value: {'position':"absolute",'top':"5px",'width':"5px",'height':"5px",'border-radius':"50%",}},
+            {name: ".pre-header .circle-1",value: {'left':"10px",'background':"red",}},
+            {name: ".pre-header .circle-2",value: {'left':"20px",'background':"orange",}},
+            {name: ".pre-header .circle-3",value: {'left':"30px",'background':"gray",}},
+
+            // footer section
+            {name: ".pre-footer",value: {'border-radius':"0 0 10px 10px",'margin-bottom':"-20px",}},
+            {name: ".pre-footer .language-footer",value: {'position':"absolute",'bottom':"0",'left':"10px",'font-size':"9px"}},
+            {name: ".pre-footer .info-footer",value: {'left':"unset",'right':"10px",}},
+
+            // code section
+            {name: "pre .comment",value: {'color':"#8d8687",}}, //
+            {name: "pre .constant",value: {'color':"#f99b15",}}, //
+            {name: "pre .storage",value: {'color':"#815ba4",}}, //
+            {name: "pre .string, pre .comment.docstring",value: {'color':"#48b685",}}, //
+            {name: "pre .string.regexp, pre .support.tag.script, pre .support.tag.style",value: {'color':"#48896C",}}, //
+            {name: "pre .keyword, pre .selector",value: {'color':"#815ba4",}}, //
+            {name: "pre .entity.function",value: {'color':"#06b6ef",}}, //
+            {name: "pre .entity.name.function",value: {'color':"#06b6ef",}}, //
+            {name: "pre .entity.class",value: {'color':"#fec418",}}, //
+            // {name: "pre .entity",value: {'color':"#6d79de",}},
+            {name: "pre .operator",value: {'color':"#f99b15",}}, //
+            {name: "pre .integer",value: {'color':"#f99b15",}}, //
+            {name: "pre .variable.global, pre .variable.class, pre .variable.instance",value: {'color':"#ef6155",}}, //
+
+            {name: "pre .support",value: {'color':"#fec418",}}, //
+            {name: "pre .inherited-class",value: {'font-style':"italic",}},
+            {name: "[data-language='c'] .function.call, .lang-c .function.call, .language-c .function.call",value: {'color':"#06b6ef",}}, //
+        ]
+    },
 ];
