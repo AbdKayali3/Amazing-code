@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo">
+        <section class="block-2">
+            <h2 class="title">Title 1</h2>
+            <div class="item">
+                <a href="http://asdfasdfasdff" class="link">click me</a>
+                <p class="decription">decription decription decription decription</p>
+            </div>
+            <h2 class="title">Title 2</h2>
+            <div class="item">
+                <a href="http://asdfasdfasdff" class="link">click me</a>
+                <p class="decription">decription decription decription decription</p>
+            </div>
+            <h2 class="title">Title 3</h2>
+            <div class="item">
+                <a href="http://asdfasdfasdff" class="link">click me</a>
+                <p class="decription">decription decription decription decription</p>
+            </div>
+        </section>
+
+        <section class="block-2">
+            <h2 class="title">Title 1</h2>
+            <div class="item">
+                <a href="http://asdfasdfasdff" class="link">click me</a>
+                <p class="decription">decription decription decription decription</p>
+            </div>
+            <h2 class="title">Title 2</h2>
+            <div class="item">
+                <a href="http://asdfasdfasdff" class="link">click me</a>
+                <p class="decription">decription decription decription decription</p>
+            </div>
+            <h2 class="title">Title 3</h2>
+            <div class="item">
+                <a href="http://asdfasdfasdff" class="link">click me</a>
+                <p class="decription">decription decription decription decription</p>
+            </div>
+        </section>
+    </div>
+    <script>
+
+        //f etched data inside varable
+        let demo;
+
+        // document.getElementById("demo").innerHTML = demo;
+
+
+        let s = [];
+
+        let blocks = demo.querySelectorAll(".block-2");
+
+        for( i in blocks) {
+            console.log();
+            let items = i.querySelectorAll('.item');
+            for( t in items) {
+                console.log();
+
+                let obj = {
+                    title: t.querySelector('title').innerHTML,
+                    link: t.querySelector('link').innerHTML,
+                    decription: t.querySelector('decription').innerHTML
+                }
+                s.append(obj);
+            }
+        }
+
+
+
+        // convert s to json
+        let json = JSON.stringify(s);
+    </script>
+</body>
+</html>

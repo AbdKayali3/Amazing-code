@@ -483,4 +483,90 @@ const themes = [
             {name: "[data-language='c'] .function.call, .lang-c .function.call, .language-c .function.call",value: {'color':"#06b6ef",}}, //
         ]
     },
+    {
+        theme:"pastie",
+        index:11,
+        data: [
+
+            // the pre itself (the main thing that will hold your snippit code) aka "The Big Boss"
+            {name: "pre",value: {'overflow':"visible",'z-index':"0",'border-radius':"10px",'display':"inline-block",'width':"auto",'position':"relative",'max-width':"1200px",'min-width':"600px",'padding':"0",'padding-top':"20px",'padding-bottom':"20px",'word-wrap':"break-word",'font-size':"14px",'background':"#f8f8ff",'color':"#000000",}},
+
+            // header and footer to style them in one div   
+            {name: ".in-pre-additions",value: {'background':"#CDCCCC",'height':"15px",'display':"block",'position':"relative",'font-size':"10px"}},
+
+            // header section
+            {name: ".pre-header",value: {'border-radius':"10px 10px 0 0",'text-align':"center",'margin-top':"-20px",'color':"#000000",}},
+            {name: ".pre-header .circles",value: {'position':"absolute",'top':"5px",'width':"5px",'height':"5px",'border-radius':"50%",}},
+            {name: ".pre-header .circle-1",value: {'left':"10px",'background':"red",}},
+            {name: ".pre-header .circle-2",value: {'left':"20px",'background':"orange",}},
+            {name: ".pre-header .circle-3",value: {'left':"30px",'background':"gray",}},
+
+            // footer section
+            {name: ".pre-footer",value: {'border-radius':"0 0 10px 10px",'margin-bottom':"-20px",}},
+            {name: ".pre-footer .language-footer",value: {'position':"absolute",'bottom':"0",'left':"10px",'font-size':"9px",'color':"#000000",}},
+            {name: ".pre-footer .info-footer",value: {'left':"unset",'right':"10px",'color':"#000000",}},
+
+            // code section
+            {name: "pre .comment",value: {'color':"#888888",}}, //
+            {name: "pre .constant",value: {'color':"#036",}}, //
+            {name: "pre .storage",value: {'color':"#008800",}}, //
+            {name: "pre .string, pre .comment.docstring",value: {'color':"#dd2200",}}, //
+            {name: "pre .string.regexp, pre .support.tag.script, pre .support.tag.style",value: {'color':"#880088",}}, //
+            {name: "pre .keyword, pre .selector",value: {'color':"#008800",}}, //
+            {name: "pre .entity.function",value: {'color':"#0066bb",}}, //
+            {name: "pre .entity.name.function",value: {'color':"#0066bb",}}, //
+            {name: "pre .entity.class",value: {'color':"#bb0066",}}, //
+            // {name: "pre .entity",value: {'color':"#6d79de",}},
+            {name: "pre .operator",value: {'color':"#000000",}}, //
+            {name: "pre .integer",value: {'color':"#0000dd",}}, //
+            {name: "pre .variable.global, pre .variable.class, pre .variable.instance",value: {'color':"#3333bb",}}, //
+
+            {name: "pre .support",value: {'color':"#007700",}}, //
+            {name: "pre .inherited-class",value: {'font-style':"italic",}},
+            {name: "[data-language='c'] .function.call, .lang-c .function.call, .language-c .function.call",value: {'color':"#0066bb",}}, //
+        ]
+    },
+    {
+        theme:"rainbow",
+        index:12,
+        data: [
+
+            // the pre itself (the main thing that will hold your snippit code) aka "The Big Boss"
+            {name: "pre",value: {'overflow':"visible",'z-index':"0",'border-radius':"10px",'display':"inline-block",'width':"auto",'position':"relative",'max-width':"1200px",'min-width':"600px",'padding':"0",'padding-top':"20px",'padding-bottom':"20px",'word-wrap':"break-word",'font-size':"14px",'background':"#010104",'color':"#ffffff",}},
+
+            // header and footer to style them in one div   
+            {name: ".in-pre-additions",value: {'background':"#3E3E3E",'height':"15px",'display':"block",'position':"relative",'font-size':"10px"}},
+
+            // header section
+            {name: ".pre-header",value: {'border-radius':"10px 10px 0 0",'text-align':"center",'margin-top':"-20px"}},
+            {name: ".pre-header .circles",value: {'position':"absolute",'top':"5px",'width':"5px",'height':"5px",'border-radius':"50%",}},
+            {name: ".pre-header .circle-1",value: {'left':"10px",'background':"red",}},
+            {name: ".pre-header .circle-2",value: {'left':"20px",'background':"orange",}},
+            {name: ".pre-header .circle-3",value: {'left':"30px",'background':"gray",}},
+
+            // footer section
+            {name: ".pre-footer",value: {'border-radius':"0 0 10px 10px",'margin-bottom':"-20px",}},
+            {name: ".pre-footer .language-footer",value: {'position':"absolute",'bottom':"0",'left':"10px",'font-size':"9px"}},
+            {name: ".pre-footer .info-footer",value: {'left':"unset",'right':"10px",}},
+
+            // code section
+            {name: "pre .comment",value: {'color':"#747474",}}, //
+            {name: "pre .constant",value: {'color':"#ffad5c",}}, //
+            {name: "pre .storage",value: {'color':"#fb2639",}}, //
+            {name: "pre .string, pre .comment.docstring",value: {'color':"#fff55c",}}, //
+            {name: "pre .string.regexp, pre .support.tag.script, pre .support.tag.style",value: {'color':"#fff55c",}}, //
+            {name: "pre .keyword, pre .selector",value: {'color':"#bc5cff",}}, //
+            {name: "pre .entity.function",value: {'color':"#43a6ff",}}, //
+            {name: "pre .entity.name.function",value: {'color':"#43a6ff",}}, //
+            {name: "pre .entity.class",value: {'color':"#fc4959",}}, //
+            // {name: "pre .entity",value: {'color':"#6d79de",}},
+            {name: "pre .operator",value: {'color':"#bc5cff",}}, //
+            {name: "pre .integer",value: {'color':"#D7D181",}}, //
+            {name: "pre .variable.global, pre .variable.class, pre .variable.instance",value: {'color':"#f57900",}},
+
+            {name: "pre .support",value: {'color':"#fb2639",}}, //
+            {name: "pre .inherited-class",value: {'font-style':"italic",}},
+            {name: "[data-language='c'] .function.call, .lang-c .function.call, .language-c .function.call",value: {'color':"#06b6ef",}}, //
+        ]
+    },
 ];
