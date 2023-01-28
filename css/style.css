@@ -1,18 +1,23 @@
 :root {
     --color-bg-1: #1A1A1B;
-    --color-bg-2: #333F44;
-    --color-main-1: #37AA9C;
-    --color-main-2: #94F3E4;
+    --color-bg-2: rgba(0, 0, 0, 0.31);
+    --color-main-1: #44369E;
+    --color-main-2: #261d62;
     --font-color-1: #eee;
-    --font-color-2: #aaa;
-    --shadow-color-1: #37AA9C;
-    --shadow-color-2: #aaaaaa55;
+    --font-color-2: rgb(189, 189, 189);
+    --shadow-color-1: #4c3ea7;
+    --shadow-color-2: #00000065;
 }
 * {
     color: var(--font-color-1);
 }
 html, body {
-    background-color: var(--color-bg-1);
+    /* background-color: var(--color-bg-1); */
+    background: rgb(255,255,255);
+    background: linear-gradient(146deg, rgba(255,255,255,1) 0%, rgba(234,135,238,1) 24%, rgba(193,123,226,1) 41%, rgba(139,87,214,1) 63%, rgba(68,54,158,1) 82%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
 }
 
 /*
@@ -23,13 +28,13 @@ html, body {
  {
      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
      box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-     background-color: #F5F5F5;
+     background-color: #b57cb3;
  }
  
 *::-webkit-scrollbar
  {
      width: 10px;
-     background-color: #F5F5F5;
+     background-color: #722e6cbb;
  }
  
 *::-webkit-scrollbar-thumb
@@ -38,16 +43,28 @@ html, body {
      border: 2px solid #555555;
  }
 
-
-.header {
+/* make the container have a glassmorphism effect*/
+.container {
+    background: rgba(32, 30, 30, 0.581);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 8px );
+    -webkit-backdrop-filter: blur( 8px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
     padding: 50px;
     margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.header {
+    /* padding: 50px; */
+    /* margin-top: 20px; */
     /* background-color: var(--color-bg-2); */
     border-radius: 15px;
 }
 .header h1 {
     font-size: 3rem;
-    color: var(--color-main-1);
+    /* color: var(--color-main-1); */
 }
 .header p {
     padding-left: 20%;
@@ -85,7 +102,13 @@ html, body {
     right: 18px;
 }
 .copy-btn {
-    background-color: #37AA9C;
+    background-color: var(--color-main-1);
+    border: none;
+}
+.copy-btn:active,
+.copy-btn:hover {
+    background-color: var(--color-main-2);
+    border: none;
 }
 .text-placehoder {
     color: var(--font-color-2);
