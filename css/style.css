@@ -14,7 +14,9 @@
 html, body {
     /* background-color: var(--color-bg-1); */
     background: rgb(255,255,255);
-    background: linear-gradient(146deg, rgba(255,255,255,1) 0%, rgba(234,135,238,1) 24%, rgba(193,123,226,1) 41%, rgba(139,87,214,1) 63%, rgba(68,54,158,1) 82%);
+    /* background: linear-gradient(146deg, rgba(255,255,255,1) 0%, rgba(234,135,238,1) 24%, rgba(193,123,226,1) 41%, rgba(139,87,214,1) 63%, rgba(68,54,158,1) 82%); */
+    /* background: linear-gradient(146deg, rgb(164, 148, 164) 0%, rgb(128, 74, 130) 24%, rgb(110, 70, 129) 41%, rgb(80, 50, 122) 63%, rgb(32, 26, 75) 82%); */
+    background: linear-gradient(146deg, rgb(82, 74, 82) 0%, rgb(88, 51, 90) 24%, rgb(76, 48, 89) 41%, rgb(49, 31, 74) 63%, rgb(15, 13, 37) 82%);
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh;
@@ -51,7 +53,7 @@ html, body {
     -webkit-backdrop-filter: blur( 8px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
-    padding: 50px;
+    padding: 30px;
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -127,5 +129,10 @@ html, body {
 .form-control:disabled {
     background-color:  var(--color-bg-2);
     border-color:  var(--color-bg-2);
+    color: var(--font-color-1);
+}
+
+select option {
+    background-color: var(--color-bg-1);
     color: var(--font-color-1);
 }
