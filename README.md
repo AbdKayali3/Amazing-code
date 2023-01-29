@@ -3,11 +3,11 @@ Amazing code is a tool to color and style your code to use in in your blog/email
 
 # How to use
 - open https://abdkayali3.github.io/Amazing-code/
-- Past your code in the textarea
+- Paste your code in the text area
 - Choose the language, the theme, and set other options if needed
 - The tool will do its magic and show you the styled code
-- Click CopyHTML button to use it in your blog/email/homework or any texteditor
-- Click on CopyRichText to use it for Word documents like MS Word or Google Docs
+- Click Copy HTML button to use it in your blog/email/homework or any texteditor
+- Click on Copy RichText to use it for Word documents like MS Word or Google Docs
 
 Note: to use in Moodle without problems you should set the Header/Footer to No
 
